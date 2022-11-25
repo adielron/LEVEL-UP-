@@ -33,14 +33,14 @@ const Input = ( {placeholder, name, type, value, handleChange} ) => (
 
 const Welcome = () => {
 
-    const {  formData, handleChange, isLoading } = useContext(TransactionContext);
+    const {  bookFormData, handleChange2, isLoading } = useContext(TransactionContext);
     const [books, setBooks] = useState();
   
 
 
     const handleSubmit2 = async (e) => {
 
-        const { book } = formData;
+        const { book } = bookFormData;
         e.preventDefault();
         if( book.length < 3 || !book ) return;
         const data = await searchBooks(book);
@@ -105,7 +105,7 @@ const Welcome = () => {
 
                     <div className='p-5 sm:w-96 w-full flex flex-col justify-start items-center blue-glassmorphism'>
 
-                        <Input placeholder="Enter A Book's Name" name='book'  type="text" handleChange={handleChange}   />
+                        <Input placeholder="Enter A Book's Name" name='book'  type="text" handleChange={handleChange2}   />
 
                         <div className='h-[1px] w-full bg-gray-400 my-2'/>
 
